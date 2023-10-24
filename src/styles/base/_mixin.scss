@@ -32,3 +32,7 @@
     @content;
   }
 }
+
+@mixin border-r-normal {
+  border-radius: 6px;
+}

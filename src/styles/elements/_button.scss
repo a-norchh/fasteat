@@ -1,0 +1,10 @@
+button {
+  border: none;
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--dark-brown-color);
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--dark-brown-2-color);
+  }
+}
