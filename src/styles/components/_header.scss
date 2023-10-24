@@ -1,0 +1,26 @@
+header {
+  // Navbar
+  nav {
+    position: fixed;
+    width: 100%;
+    background-color: var(--primary-color);
+    .container {
+      display: flex;
+      height: 6rem;
+      align-items: center;
+      justify-content: space-between;
+      .brand-logo,
+      .icon {
+        font-size: 2.4rem;
+        color: var(--white-color);
+      }
+      .brand-logo {
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .icon {
+        cursor: pointer;
+      }
+    }
+  }
+}
