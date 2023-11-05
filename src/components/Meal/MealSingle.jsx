@@ -85,14 +85,12 @@ const MealSingle = ({ meal }) => {
             <span>Instructions:</span>
             <ul className="instruction-contain">
               {meal.instructions?.map((item, index) => (
-                <>
-                  <li key={index}>
-                    <div className="icon">
-                      <BiSolidCheckboxChecked />
-                    </div>
-                    <p>{item}</p>
-                  </li>
-                </>
+                <li key={index}>
+                  <div className="icon">
+                    <BiSolidCheckboxChecked />
+                  </div>
+                  <p>{item}</p>
+                </li>
               ))}
             </ul>
           </div>

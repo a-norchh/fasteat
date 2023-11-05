@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import { Link } from "react-router-dom";
 
 const MealList = ({ meals }) => {
-  console.log(meals);
+  // console.log(meals);
   return (
     <div>
       <Card>

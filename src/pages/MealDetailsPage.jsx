@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useMealContext } from "../context/mealContext";
 import { startFetchSingleMeal } from "../actions/mealsAction";
 import Loader from "../components/Loader/Loader";
@@ -11,10 +11,9 @@ const MealDetailsPage = () => {
   const { dispatch, meal, mealLoading, categoryLoading, categories } =
     useMealContext();
 
-  window.scrollTo(0, 0);
   useEffect(() => {
     startFetchSingleMeal(dispatch, mealId);
-  }, []);
+  }, [dispatch, mealId]);
 
   let ingredientArr = [],
     measureArr = [],
@@ -53,7 +52,7 @@ const MealDetailsPage = () => {
     measureArr,
   };
 
-  console.log(mealLoading);
+  window.scrollTo(0, 0);
 
   return (
     <section className="meal-page section--padding">
