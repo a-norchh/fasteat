@@ -8,6 +8,10 @@ const SideBar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebarContext();
   const { categories } = useMealContext();
 
+  const selectedHandler = (selected) => {
+    closeSidebar();
+  };
+
   return (
     <nav className={`sidebar ${isSidebarOpen ? "sidebar--active" : ""}`}>
       <div className="sidebar__header">
@@ -23,7 +27,7 @@ const SideBar = () => {
             <Link
               key={item.idCategory}
               to={`/meal/category/${item.strCategory}`}
-              onClick={() => closeSidebar()}
+              onClick={() => selectedHandler(item.strCategory)}
             >
               <li>{item.strCategory}</li>
             </Link>

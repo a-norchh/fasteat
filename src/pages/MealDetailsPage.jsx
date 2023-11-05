@@ -11,6 +11,7 @@ const MealDetailsPage = () => {
   const { dispatch, meal, mealLoading, categoryLoading, categories } =
     useMealContext();
 
+  window.scrollTo(0, 0);
   useEffect(() => {
     startFetchSingleMeal(dispatch, mealId);
   }, []);

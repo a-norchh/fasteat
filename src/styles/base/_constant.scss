@@ -1,7 +1,8 @@
 :root {
   --black-color: #222;
   --white-color: #fff;
-  --primary-color: #48a878;
+  // --primary-color: #48a878;
+  --primary-color: #3f9469;
   --dark-green-color: #3f9469;
   --soft-green-color: #99ca9c;
   --brown-color: #eeccac;
@@ -12,3 +13,10 @@
 
   --nav-desktop-height: 5rem;
 }
+
+// breakpoint
+$mobile-screen: 640px;
+$tablet-screen: 768px;
+$small-screen: 1024px;
+$medium-screen: 1280px;
+$large-screen: 1920px;

@@ -14,10 +14,12 @@ const HomePage = () => {
   ) : meals === null ? (
     <NotFound />
   ) : meals?.length ? (
-    <SearchResult meals={meals} />
+    <SearchResult />
   ) : (
     ""
   );
+
+  window.scrollTo(0, 0);
 
   return (
     <div id="home-page">

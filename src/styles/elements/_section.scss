@@ -3,6 +3,9 @@ section {
   overflow: hidden;
   &.section--padding {
     padding: 50px 0;
+    @include mobile-screen {
+      padding: 40px 0;
+    }
   }
   .section {
     &__decorate {

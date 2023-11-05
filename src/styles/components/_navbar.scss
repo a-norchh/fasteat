@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   z-index: 8;
-  background-color: rgba(#48a878, 1);
+  background-color: var(--primary-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   .container {
     display: flex;

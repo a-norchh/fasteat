@@ -2,16 +2,29 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  @include small-screen {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include tablet-screen {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mobile-screen {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .card-item {
     position: relative;
     background-color: var(--white-color);
     padding: 10px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
+
     @media only screen and (min-width: 768px) {
       &:hover {
         transform: translateY(-6px);
         box-shadow: 1px 8px 10px rgba(0, 0, 0, 0.05);
+        .title {
+          color: var(--dark-brown-color);
+        }
       }
     }
   }
@@ -25,5 +38,16 @@
     color: var(--white-color);
     background-color: var(--primary-color);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .meal-details {
+    padding: 10px;
+    .area {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    .title {
+      font-weight: 500;
+    }
   }
 }

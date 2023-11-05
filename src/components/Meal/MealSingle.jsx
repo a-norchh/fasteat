@@ -24,8 +24,6 @@ const MealSingle = ({ meal }) => {
     }
   }
 
-  // console.log(meal.instructions);
-
   return (
     <>
       <div className="breadcrumb">

@@ -1,38 +1,41 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useMealContext } from "../context/mealContext";
-import {
-  startFetchMealByCategory,
-  startFetchCategories,
-} from "../actions/mealsAction";
+import { startFetchMealByCategory } from "../actions/mealsAction";
+import MealList from "../components/Meal/MealList";
+import Loader from "../components/Loader/Loader";
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
-  const { dispatch, categoryMeals, categories } = useMealContext();
+  const { dispatch, categories, categoryMeals, categoryMealsLoading } =
+    useMealContext();
 
   useEffect(() => {
-    // startFetchCategories(dispatch);
     startFetchMealByCategory(dispatch, categoryName);
-  }, []);
+  }, [categoryName, dispatch]);
 
-  // console.log(categories[0].strCategory);
   let categoryDescription = "";
   if (categories.length > 0) {
     for (let i = 0; i < categories.length; i++) {
       if (categories[i].strCategory === categoryName)
         categoryDescription = categories[i].strCategoryDescription;
     }
-    console.log(categoryDescription);
   }
-
+  window.scroll(0, 0);
   return (
     <div className="category-page">
       <section className="section--padding">
         <div className="container">
           <div className="category-title-contain">
-            <div className="title">{categoryName}</div>
-            <div className="description">{categoryDescription}</div>
+            <h2 className="cat-title">{categoryName}</h2>
+            <p className="cat-desc">{categoryDescription}</p>
           </div>
+          <h3 className="section__title">MEALS</h3>
+          {categoryMealsLoading ? (
+            <Loader />
+          ) : (
+            <MealList meals={categoryMeals} />
+          )}
         </div>
       </section>
     </div>

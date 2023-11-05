@@ -1,4 +1,7 @@
 .meal-page {
+  display: grid;
+  grid-template-rows: 1fr auto;
+
   .breadcrumb {
     display: flex;
     flex-direction: row;
@@ -10,6 +13,9 @@
     // background-color: var(--dark-brown-color);
     background-color: var(--primary-color);
     margin: 10px auto 50px;
+    @include tablet-screen {
+      margin: 0px auto 30px;
+    }
     .icon {
       font-size: 20px;
       color: var(--white-color);
@@ -23,6 +29,9 @@
     background-color: var(--white-color);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
     padding: 40px;
+    @include mobile-screen {
+      padding: 30px;
+    }
 
     .meal-details__row {
       display: grid;
@@ -31,6 +40,10 @@
       &:first-child {
         margin-bottom: 30px;
         grid-template-columns: 1.5fr 2fr;
+
+        @include small-screen {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
     }
 
@@ -93,11 +106,16 @@
         margin-top: 30px;
         .ingredient-list {
           display: grid;
-          grid-template-columns: auto auto auto;
+          grid-template-columns: repeat(3, 1fr);
           font-size: 15px;
           gap: 8px;
           padding: 10px;
-          //   background-color: var(--brown-color);
+          @include tablet-screen {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          @include mobile-screen {
+            grid-template-columns: repeat(1, 1fr);
+          }
         }
       }
     }
