@@ -1,0 +1,35 @@
+section {
+  position: relative;
+  overflow: hidden;
+  &.section--padding {
+    padding: 50px 0;
+  }
+  .section {
+    &__decorate {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      background-color: rgba(#ca8e55, 0.1);
+      border-radius: 50%;
+    }
+    &__title {
+      letter-spacing: 1px;
+      // text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 4px;
+        background-color: var(--primary-color);
+        bottom: 0px;
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,19 +1,32 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-// import CategoryPage from "./pages/CategoryPage";
-// import MealDetailsPage from "./pages/MealDetailsPage";
-// import ErrorPage from "./pages/ErrorPage";
-import Header from "./components/Header/Header";
+import { HomePage, MealDetailsPage, CategoryPage, ErrorPage } from "./pages";
+import SideBar from "./components/SideBar/SideBar";
+import { SidebarProvider } from "./context/sidebarContext";
+import { MealProvider } from "./context/mealContext";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter>
+    <SidebarProvider>
+      <MealProvider>
+        <BrowserRouter>
+          <Navbar />
+          <SideBar />
+          <div className="main-container">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/meal/:mealId" element={<MealDetailsPage />} />
+              <Route
+                path="/meal/category/:categoryName"
+                element={<CategoryPage />}
+              />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </MealProvider>
+    </SidebarProvider>
   );
 };
 

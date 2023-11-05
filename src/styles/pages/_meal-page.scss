@@ -1,0 +1,136 @@
+.meal-page {
+  .breadcrumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    gap: 10px;
+    height: var(--nav-desktop-height);
+    // background-color: var(--dark-brown-color);
+    background-color: var(--primary-color);
+    margin: 10px auto 50px;
+    .icon {
+      font-size: 20px;
+      color: var(--white-color);
+    }
+    &__title {
+      text-transform: uppercase;
+      color: var(--white-color);
+    }
+  }
+  .meal-details {
+    background-color: var(--white-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+
+    .meal-details__row {
+      display: grid;
+      gap: 40px;
+
+      &:first-child {
+        margin-bottom: 30px;
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    .meal-details-list {
+      padding-top: 20px;
+
+      .meal-title {
+        // color: var(--primary-color);
+        position: relative;
+        font-weight: 600;
+        padding-bottom: 12px;
+        margin-bottom: 28px;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary-color);
+        }
+      }
+
+      .meal-category,
+      .meal-source,
+      .meal-tag,
+      .meal-ingredient {
+        display: flex;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        span {
+          margin-right: 5px;
+          font-weight: 600;
+        }
+      }
+
+      .meal-source {
+        a:hover {
+          color: var(--dark-brown-color);
+        }
+      }
+
+      .meal-tag {
+        align-items: center;
+        .group-tag {
+          display: flex;
+          gap: 8px;
+          div {
+            font-size: 14px;
+            border-radius: 4px;
+            color: var(--white-color);
+            padding: 1px 10px;
+            background-color: var(--dark-brown-color);
+          }
+        }
+      }
+      .meal-ingredient {
+        display: block;
+        margin-top: 30px;
+        .ingredient-list {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          font-size: 15px;
+          gap: 8px;
+          padding: 10px;
+          //   background-color: var(--brown-color);
+        }
+      }
+    }
+
+    .meal-instruction {
+      span {
+        margin-right: 5px;
+        font-weight: 600;
+      }
+      .instruction-contain {
+        padding: 20px 30px 20px 20px;
+        font-size: 16px;
+        margin-top: 10px;
+        background-color: var(--grey-color);
+        border: 1px solid var(--brown-color);
+
+        li {
+          display: flex;
+          //   align-items: center;
+          margin-bottom: 15px;
+          line-height: 28px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .icon {
+            position: relative;
+            color: var(--dark-brown-color);
+            top: 3px;
+            margin-right: 6px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

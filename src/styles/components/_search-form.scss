@@ -1,0 +1,20 @@
+.search-form {
+  .search-contain {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    @include border-r-normal;
+    input {
+      font-size: 1.8rem;
+      padding: 1.5rem;
+    }
+    .btn-search {
+      padding: 0 1.5rem;
+      background-color: var(--dark-brown-color);
+      &:hover {
+        background-color: var(--dark-brown-2-color);
+      }
+    }
+  }
+}

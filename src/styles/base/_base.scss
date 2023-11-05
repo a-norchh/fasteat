@@ -16,6 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--grey-color);
   color: var(--black-color);
+  overflow-x: hidden;
 }
 
 img {
@@ -28,9 +29,13 @@ ul {
 }
 
 a {
+  color: initial;
   outline: none;
   text-decoration: none;
   // color: var(--black-color);
+  &:visited {
+    color: inherit;
+  }
 }
 
 h1,

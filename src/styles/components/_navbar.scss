@@ -1,0 +1,25 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 8;
+  background-color: rgba(#48a878, 1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  .container {
+    display: flex;
+    align-items: center;
+    height: var(--nav-desktop-height);
+    justify-content: space-between;
+    .brand-logo,
+    .icon {
+      font-size: 2.4rem;
+      color: var(--white-color);
+    }
+    .brand-logo {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .icon {
+      cursor: pointer;
+    }
+  }
+}

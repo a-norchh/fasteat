@@ -1,0 +1,20 @@
+.search-result {
+  background-color: var(--white-color);
+  .card-item {
+    &:hover {
+      .title {
+        color: var(--dark-brown-color);
+      }
+    }
+  }
+  .meal-details {
+    padding: 10px;
+    .area {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    .title {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.loader {
+  padding: 50px;
+  .loader-anim {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    div {
+      width: 14px;
+      height: 14px;
+      transition: all;
+      background-color: var(--dark-brown-color);
+      animation: loading 1.2s ease-out;
+      animation-iteration-count: infinite;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: 150ms * $i;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
